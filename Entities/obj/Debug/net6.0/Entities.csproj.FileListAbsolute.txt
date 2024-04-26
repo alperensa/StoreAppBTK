@@ -1,0 +1,34 @@
+E:\MVC\Store\Entities\bin\Debug\net6.0\Entities.deps.json
+E:\MVC\Store\Entities\bin\Debug\net6.0\Entities.dll
+E:\MVC\Store\Entities\bin\Debug\net6.0\Entities.pdb
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.dll
+E:\MVC\Store\Entities\obj\Debug\net6.0\refint\Entities.dll
+E:\MVC\Store\Entities\obj\Debug\net6.0\Entities.pdb
+E:\MVC\Store\Entities\obj\Debug\net6.0\ref\Entities.dll
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\bin\Debug\net6.0\Entities.deps.json
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\bin\Debug\net6.0\Entities.dll
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\bin\Debug\net6.0\Entities.pdb
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.dll
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\refint\Entities.dll
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\Entities.pdb
+D:\Personal Stuff\Docs\code\BTK-Akademi-ASPNET-Core-MVC-Egitimi\Store\Entities\obj\Debug\net6.0\ref\Entities.dll
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\bin\Debug\net6.0\Entities.deps.json
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\bin\Debug\net6.0\Entities.dll
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\bin\Debug\net6.0\Entities.pdb
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.dll
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\refint\Entities.dll
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\Entities.pdb
+D:\Personal Stuff\Docs\code\MVC\Store\Entities\obj\Debug\net6.0\ref\Entities.dll
