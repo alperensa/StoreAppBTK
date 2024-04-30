@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wcd3F071E2i2AZ6sOF8WFWyTPXcoD+KxooYNbFYhseNpJdhWOKKNWcPlQHZcRqwevrvM2KOSiMqB5jWyxc5oHg==",
+  "dgSpecHash": "Qg4Mxn5yN7wWQC65vCmBsBW8Ebg04JI4rSkZ4hcsHwv+t7zMBn4b/ZZdsNZAjZfXgmsJQeXaeQzURmI119LmaA==",
   "success": true,
   "projectFilePath": "D:\\Personal Stuff\\Docs\\code\\MVC\\Store\\Services\\Services.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alper\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\alper\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\alper\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\alper\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.0\\microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "C:\\Users\\alper\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\alper\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",
