@@ -1,5 +1,4 @@
 @model Product
-
 <div class="col-sm-12 col-md-4 my-2">
     <div class="card" style="width: 18rem;">
         <img src="@Model?.ImageUrl" class="card-img-top" alt="...">
@@ -13,13 +12,12 @@
                 Details</a>
             <form id="@Model.ProductId" asp-page="/Cart" method="post"  >
             <input type="hidden" asp-for="ProductId" />
-            <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId"/>
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
             <button type="submit" class="btn btn-outline-primary">
                 <i class="fa fa-cart-plus"></i>
                 Add to Cart
             </button>
             </form>
-            
             </div>
         </div>
     </div>
