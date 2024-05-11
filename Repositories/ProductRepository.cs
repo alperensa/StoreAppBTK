@@ -2,6 +2,7 @@ using Entities.Models;
 using Entities.RequestParameters;
 using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
+using Repositories.Extensions;
 
 namespace Repositories
 {
@@ -20,14 +21,11 @@ namespace Repositories
 
         public IQueryable<Product> GetAllProductsWithDetails(ProductRequestParameters p)
         {
-            return p.CategoryId is null
-            ? _context
+            return _context
             .Products
-            .Include( prd => prd.Category)
-            : _context
-            .Products
-            .Include( prd => prd.Category)
-            .Where(prd => prd.CategoryId.Equals(p.CategoryId)); 
+            .FilteredByCategoryId(p.CategoryId)
+            .FilteredBySearchTerm(p.SearchTerm)
+            .FilteredByPrice(p.MinPrice,p.MaxPrice,p.isValidPrice);
         }
 
         public Product? GetOneProduct(int id, bool trackChanges)
