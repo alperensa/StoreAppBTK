@@ -12,14 +12,14 @@ namespace Services
 
 		private readonly IRepositoryManager _manager;
 		private readonly IMapper _mapper;
-        public ProductManager(IRepositoryManager manager, IMapper mapper)
-        {
-            _manager = manager;
-            _mapper = mapper;
-        }
+		public ProductManager(IRepositoryManager manager, IMapper mapper)
+		{
+			_manager = manager;
+			_mapper = mapper;
+		}
 
-        public void CreateOneProduct(ProductDtoForInsertion productDto)
-		{	
+		public void CreateOneProduct(ProductDtoForInsertion productDto)
+		{
 			// without using AutoMapper
 
 			/* Product product = new Product(){
@@ -48,12 +48,21 @@ namespace Services
 			return _manager.Product.GetAllProducts(trackChanges);
 		}
 
-        public IEnumerable<Product> GetAllProductsWithDetails(ProductRequestParameters p)
-        {
-            return _manager.Product.GetAllProductsWithDetails(p);
-        }
+		public IEnumerable<Product> GetAllProductsWithDetails(ProductRequestParameters p)
+		{
+			return _manager.Product.GetAllProductsWithDetails(p);
+		}
 
-        public Product? GetOneProduct(int id, bool trackChanges)
+		public IEnumerable<Product> GetLatestProducts(int n, bool trackChanges)
+		{
+			return 	_manager
+					.Product
+					.FindAll(trackChanges)
+					.OrderByDescending(prd => prd.ProductId)
+					.Take(n);
+		}
+
+		public Product? GetOneProduct(int id, bool trackChanges)
 		{
 			var product = _manager.Product.GetOneProduct(id, trackChanges);
 			if (product is not null)
@@ -61,20 +70,20 @@ namespace Services
 			throw new Exception("Product not found!");
 		}
 
-        public ProductDtoForUpdate GetOneProductForUpdate(int id, bool trackChanges)
-        {
-           	var product = _manager.Product.GetOneProduct(id,trackChanges);
+		public ProductDtoForUpdate GetOneProductForUpdate(int id, bool trackChanges)
+		{
+			var product = _manager.Product.GetOneProduct(id, trackChanges);
 			var produtDto = _mapper.Map<ProductDtoForUpdate>(product);
 			return produtDto;
-        }
+		}
 
-        public IEnumerable<Product> GetShowcaseProducts(bool trackChanges)
-        {
-            var products = _manager.Product.GetShowcaseProducts(trackChanges);
+		public IEnumerable<Product> GetShowcaseProducts(bool trackChanges)
+		{
+			var products = _manager.Product.GetShowcaseProducts(trackChanges);
 			return products;
-        }
+		}
 
-        public void UpdateOneProduct(ProductDtoForUpdate productDto)
+		public void UpdateOneProduct(ProductDtoForUpdate productDto)
 		{
 			//var entity = _manager.Product.GetOneProduct(productDto.ProductId, true);
 			//entity.ProductName = productDto.ProductName;
