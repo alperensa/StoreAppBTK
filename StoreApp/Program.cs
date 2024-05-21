@@ -1,3 +1,4 @@
+using StoreApp.Infrastructure.Extensions;
 using StoreApp.Infrastructures.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,6 +39,6 @@ app.UseEndpoints(
     }
     );
 app.ConfigureAndCheck();
-app.CongigureLocalization();
+app.ConfigureLocalization();
 app.ConfigureDefaultAdminUser();
 app.Run();
