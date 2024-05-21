@@ -6,6 +6,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.ConfigureIdentity();
 builder.Services.ConfigureSession();
 builder.Services.ConfigureRepositoryRegistration();
 builder.Services.ConfigureServiceRegistration();
@@ -38,4 +39,5 @@ app.UseEndpoints(
     );
 app.ConfigureAndCheck();
 app.CongigureLocalization();
+app.ConfigureDefaultAdminUser();
 app.Run();
