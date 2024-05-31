@@ -1,0 +1,39 @@
+﻿@model RegisterDto
+
+<div class="text-center my-5">
+	<h6 class="display-6">Register</h6>
+</div>
+
+<div class="row">
+	<div class="col-md-4 offset-md-4">
+		<div>
+			<div class="text-danger" asp-validation-summary="All"></div>
+		</div>
+		<form asp-action="Register" method="post">
+			<div class="form-group my-3">
+				<label asp-for="Username"></label>
+				<input class="form-control" asp-for="Username" />
+
+			</div>
+			<div class="form-group my-3">
+				<label asp-for="Email"></label>
+				<input class="form-control" asp-for="Email" />
+
+			</div>
+
+			<div class="form-group my-3">
+				<label asp-for="Password"></label>
+				<input type="password" class="form-control" asp-for="Password" />
+			</div>
+
+			<div class="form-group my-3">
+				<button type="submit" class="form-control btn btn-primary btn-block">
+					<i class="fa fa-user-plus"></i>
+					Register
+				</button>
+			</div>
+
+
+		</form>
+	</div>
+</div>
