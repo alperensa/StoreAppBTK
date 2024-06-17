@@ -40,6 +40,12 @@ namespace Services
             return result;
         }
 
+        public async Task<IdentityResult> DeleteOneUser(string username)
+        {
+            var user = await GetOneUser(username);
+            return await _userManager.DeleteAsync(user);
+        }
+
         public IEnumerable<IdentityUser> GetAllUsers()
         {
             return _userManager.Users.ToList();
@@ -47,20 +53,31 @@ namespace Services
 
         public async Task<IdentityUser> GetOneUser(string userName)
         {
-            return await _userManager.FindByNameAsync(userName);
+            var user = await _userManager.FindByNameAsync(userName);
+            if(user is not null)
+                return user;
+            throw new Exception("User could not be found.");
         }
 
         public async Task<UserDtoForUpdate> GetOneUserForUpdate(string userName)
         {
             var user = await GetOneUser(userName);
-            if(user is not null)
-            {
+           
                 var userDto = _mapper.Map<UserDtoForUpdate>(user);
                 userDto.Roles =  new HashSet<string>(Roles.Select( r=> r.Name).ToList());
                 userDto.UserRoles = new HashSet<string>(await _userManager.GetRolesAsync(user));
                 return userDto;
-            }
-            throw new Exception("cannot get user");
+          
+        }
+
+        public async Task<IdentityResult> ResetPassword(ResetPasswordDto model)
+        {
+            var user  = await GetOneUser(model.Username);
+            
+                await _userManager.RemovePasswordAsync(user);
+                var result = await _userManager.AddPasswordAsync(user,model.Password);
+                return result;
+           
         }
 
         public async Task UpdateUser(UserDtoForUpdate userDto)
@@ -69,8 +86,7 @@ namespace Services
             user.PhoneNumber = userDto.PhoneNumber;
             user.Email = userDto.Email;
 
-            if(user is not null)
-            {
+           
                 var result = await _userManager.UpdateAsync(user);
                 if(userDto.Roles.Count > 0)
                 {
@@ -78,7 +94,7 @@ namespace Services
                     await _userManager.RemoveFromRolesAsync(user,userRoles);
                     await _userManager.AddToRolesAsync(user,userDto.Roles);
                 }
-            }
+            
         }
     }
 }
