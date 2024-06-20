@@ -1,10 +1,12 @@
 using Entities.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StoreApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly IServiceManager _manager;

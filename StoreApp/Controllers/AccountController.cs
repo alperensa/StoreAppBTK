@@ -16,7 +16,7 @@ namespace StoreApp.Controllers
 			_signInManager = signInManager;
 		}
 
-		public IActionResult Login([FromQuery(Name = "ReturnUrl")] string ReturnUrl = "/")
+		public IActionResult Login([FromQuery(Name = "ReturnUrl")] string ReturnUrl ="/")
 		{
 			return View(new LoginModel()
 			{ 
@@ -36,7 +36,7 @@ namespace StoreApp.Controllers
 					await _signInManager.SignOutAsync();
 					if((await _signInManager.PasswordSignInAsync(user,model.Password,false,false)).Succeeded)
 					{
-						return Redirect(model.ReturnUrl ?? "/");
+						return Redirect(model?.ReturnUrl ?? "/");
 					}
 				}
 				ModelState.AddModelError("Error", "Invalid username or password");
@@ -82,6 +82,11 @@ namespace StoreApp.Controllers
 					ModelState.AddModelError("", err.Description);
 				}
 			}
+			return View();
+		}
+
+		public IActionResult AccessDenied()
+		{
 			return View();
 		}
 	}

@@ -1,6 +1,7 @@
 using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StoreApp.Controllers
 {
@@ -15,6 +16,7 @@ namespace StoreApp.Controllers
             _cart = cart;
         }
 
+        [Authorize]
         public IActionResult Checkout() => View(new Order());
 
         [HttpPost]

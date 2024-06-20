@@ -5,6 +5,7 @@ using Repositories;
 using Repositories.Contracts;
 using Services;
 using Services.Contracts;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using StoreApp.Models;
 
 namespace StoreApp.Infrastructures.Extensions
@@ -62,6 +63,17 @@ namespace StoreApp.Infrastructures.Extensions
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IOrderService, OrderManager>();
             services.AddScoped<IAuthService, AuthManager>();
+        }
+
+        public static void ConfigureApplicationCookie(this IServiceCollection services)
+        {
+            services.ConfigureApplicationCookie(options =>{
+                options.LoginPath = new PathString("/Account/Login");
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.AccessDeniedPath = new PathString("/Account/AccessDenied");  
+                
+            });
         }
 
         public static void ConfigureRouting(this IServiceCollection services)
