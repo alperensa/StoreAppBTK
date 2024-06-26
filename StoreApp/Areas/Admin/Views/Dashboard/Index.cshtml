@@ -1,2 +1,6 @@
-
+@{
+	ViewData["Title"] = "Home";
+}
 <partial name="_Cards"/>
+
+@await Component.InvokeAsync("Showcase", new {page = "List"})

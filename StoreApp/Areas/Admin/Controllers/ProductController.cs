@@ -4,7 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
-
+using Entities.RequestParameters;
+using StoreApp.Models;
 
 namespace StoreApp.Areas.Admin.Controllers
 {
@@ -19,14 +20,25 @@ namespace StoreApp.Areas.Admin.Controllers
 			_manager = manager;
 		}
 
-		public IActionResult Index()
+		public IActionResult Index(ProductRequestParameters p)
 		{
-			var model = _manager.ProductService.GetAllProducts(false);
-			return View(model);
+			var products = _manager.ProductService.GetAllProductsWithDetails(p);
+			var pagination = new Pagination()
+			{
+				CurrentPage = p.PageNumber,
+				ItemsPerPage = p.PageSize,
+				TotalItems = _manager.ProductService.GetAllProducts(false).Count()
+			};
+			return View(new ProductListViewModel()
+			{
+				Products = products,
+				Pagination = pagination
+			});
 		}
 		public IActionResult Create()
 		{
 			ViewBag.Categories = getCategoriesSelectList();
+			
 			return View();
 		}
 
@@ -77,6 +89,7 @@ namespace StoreApp.Areas.Admin.Controllers
 			}
 			productDto.ImageUrl = String.Concat("/images/",file.FileName);
 			_manager.ProductService.UpdateOneProduct(productDto);
+			TempData["success"] = "successfully updated";
 			return RedirectToAction("Index");
 
 			}
